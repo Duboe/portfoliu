@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+section {
+    display: flex;
+    height: 100vh;
+}
+#zdjecie img{
+    border: 7px solid black;
+    width: 60%;
+  
+    
+}
+#menu {
+    width: 15%;
+    background-color: rgb(23, 22, 22);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; 
+}
+#informacje{
+    width: 70%;
+}
+#zdjecie{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+#spojnik{
+    display: flex;
+    padding: 30px;
+    font-size: 2vh;
+}
+h1{
+    font-size: 4vh;
+    margin-left: 30px;
+}
+#temat {
+    width: 85%;
+    background-color: rgb(34, 33, 33);
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+    
+}
+.button:hover {
+    background-color: #45a049;
+}
+#temat-sociale {
+    width: 85%;
+    background-color: rgb(34, 33, 33);
+    font-family: Comic Sans MS, Comic Sans, cursive;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    
+}
+#ikona {
+    border: black solid 3px;
+    width: 100%;
+}
+#zdj{
+    display: flex;
+}
+figcaption{
+    font-size: 4vh;
+}
+#ikona img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+#zdj img {
+    width: 60%;
+    height: auto; 
+   
+    
+}
+
+.styleblokow {
+    width: 100%; 
+}
+#informacje-umiejetnosci{
+    padding: 20px;
+    font-size: 2.4vh;
+}
+.odnosnik {
+    border: black solid 2px;
+    padding: 20px; 
+    font-size: 110%; 
+    font-weight: bolder;
+    text-align: center;
+    color: grey;
+    font-family: Verdana, sans-serif;
+    margin-bottom: 20px; 
+    box-sizing: border-box; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.odnosnik:hover {
+    background-color: rgb(50, 50, 50); 
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.bbb{
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #2c2f31; /* Kolor tła */
+    color: white; /* Kolor tekstu */
+    border: none;
+    border-radius: 8px; /* Zaokrąglenie rogów */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Cień */
+    transition: background-color 0.3s, transform 0.3s; /* Animacje przy zmianie tła i transformacji */
+}
+.button {
+    padding: 10px 20px;
+    background-color: #2e3a3a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}

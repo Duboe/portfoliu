@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wisielec</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        #game-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            font-size: 18px;
+            color: #ff3333;
+        }
+        #wordDisplay {
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gra w Wisielca</h1>
+    <div id="game-container">
+        <p>Wprowadź literę, aby odgadnąć słowo:</p>
+        <input type="text" id="letterInput" maxlength="1">
+        <button onclick="guessLetter()">Zgadnij</button>
+        <p id="wordDisplay"></p>
+        <p id="message"></p>
+    </div>
+    
+    <script>
+        const words = ["javascript", "programowanie", "komputer", "internet", "klawiatura"];
+        let chosenWord = words[Math.floor(Math.random() * words.length)];
+        let displayWord = "_".repeat(chosenWord.length);
+        let attempts = 6;
+        
+        document.getElementById("wordDisplay").textContent = displayWord.split("").join(" ");
+        
+        function guessLetter() {
+            const letter = document.getElementById("letterInput").value.toLowerCase();
+            document.getElementById("letterInput").value = "";
+            if (!letter.match(/[a-z]/i)) return;
+
+            let newDisplayWord = "";
+            let correctGuess = false;
+
+            for (let i = 0; i < chosenWord.length; i++) {
+                if (chosenWord[i] === letter) {
+                    newDisplayWord += letter;
+                    correctGuess = true;
+                } else {
+                    newDisplayWord += displayWord[i];
+                }
+            }
+
+            if (!correctGuess) attempts--;
+
+            displayWord = newDisplayWord;
+            document.getElementById("wordDisplay").textContent = displayWord.split("").join(" ");
+            document.getElementById("message").textContent = attempts > 0 ? `Pozostało prób: ${attempts}` : `Przegrałeś! Słowo to: ${chosenWord}`;
+
+            if (displayWord === chosenWord) {
+                document.getElementById("message").textContent = "Gratulacje, odgadłeś słowo!";
+            }
+        }
+    </script>
+</body>
+</html>
